@@ -11,3 +11,4 @@
  ###### Server-side:
   - Django Rest Framework
   - Djoser
+  - PostgreSQL
