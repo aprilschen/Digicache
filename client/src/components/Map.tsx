@@ -1,15 +1,30 @@
-import React, { Component } from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader} from '@react-google-maps/api';
+import { Marker } from '@react-google-maps/api';
+import { InfoWindow } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '100%',
+  height: '60vh'
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 35.69310784173771,
+  lng: 139.70654253572886
 };
+
+const position = {
+  lat: 35.69310784173771,
+  lng: 139.70654253572886
+}
+
+const onLoad = marker => {
+  console.log('marker: ', marker)
+}
+
+const divStyle = {
+  background: `white`,
+  padding: 15
+}
 
 function Map() {
     const { isLoaded } = useJsApiLoader({
@@ -17,30 +32,30 @@ function Map() {
         googleMapsApiKey: "AIzaSyACJwjUE7Z5Xju4G7LYuU865-M22090SjE"
     })
 
-    const [map, setMap] = React.useState(null)
-
-    const onLoad = React.useCallback(function callback(map) {
-      // This is just an example of getting and using the map instance!!! don't just blindly copy!
-      const bounds = new window.google.maps.LatLngBounds(center);
-      map.fitBounds(bounds);
-
-      setMap(map)
-    }, [])
-
-    const onUnmount = React.useCallback(function callback(map) {
-      setMap(null)
-    }, [])
-
     return isLoaded ? (
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={10}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
+          zoom={13}
         >
-          { /* Child components, such as markers, info windows, etc. */ }
-          <></>
+
+        <Marker
+        onLoad={onLoad}
+        position={position}
+        icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"}
+        />
+
+          <InfoWindow
+          position={{
+            lat: 35.70310784173771,
+            lng: 139.70654253572886
+          }}
+        >
+          <div style={divStyle}>
+            <h1>InfoWindow</h1>
+          </div>
+        </InfoWindow>
+
         </GoogleMap>
     ) : <></>
   }

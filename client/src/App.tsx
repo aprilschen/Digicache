@@ -1,4 +1,4 @@
-import Header from './components/Header'
+import Navbar from './components/Navbar'
 import Map from './components/Map'
 import Form from './components/Form'
 import Footer from './components/Footer'
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <CssBaseline />
-      <Header/>
+      <Navbar/>
       <Map/>
       <Form/>
       <Footer/>
