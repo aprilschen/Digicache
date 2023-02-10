@@ -1,6 +1,8 @@
+import { maxHeight } from '@mui/system';
 import { GoogleMap, useJsApiLoader} from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 import { InfoWindow } from '@react-google-maps/api';
+import ExamplePhoto from '../assets/example.png'
 
 const containerStyle = {
   width: '100%',
@@ -23,7 +25,8 @@ const onLoad = marker => {
 
 const divStyle = {
   background: `white`,
-  padding: 15
+  maxHeight: '150px',
+  maxWidth: '150px'
 }
 
 function Map() {
@@ -47,12 +50,15 @@ function Map() {
 
           <InfoWindow
           position={{
-            lat: 35.70310784173771,
+            lat: 35.69750784173771,
             lng: 139.70654253572886
           }}
         >
           <div style={divStyle}>
-            <h1>InfoWindow</h1>
+            <img style={{height: '100px', width: '100px'}} src={ExamplePhoto}></img>
+            <hr />
+            <h3>Cool Alleyway!</h3>
+            <p>Found this cool alleway in the middle of Shinjuku.</p>
           </div>
         </InfoWindow>
 
