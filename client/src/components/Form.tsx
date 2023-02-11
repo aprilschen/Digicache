@@ -5,6 +5,7 @@ import qs from 'qs';
 import axios from "axios";
 
 function Form() {
+
     function handleSubmit(event) {
       event.preventDefault();
 
@@ -28,6 +29,7 @@ function Form() {
           data: formData,
           headers: { "Content-Type": "multipart/form-data" },
         })
+        // window.location.reload(); ACTIVATE IN PRODUCTION
       } catch (e) {
         console.log(e);
       }
@@ -40,7 +42,7 @@ function Form() {
     const [latitude, setLatitude] = useState("");
     const [longitude, setLongitude] = useState("");
     const [tags, setTags] = useState("");
-    const [image, setImage] = useState("");
+    const [image, setImage] = useState('');
 
     return (
       <div style={{textAlign: "center"}}>
@@ -79,7 +81,7 @@ function Form() {
           <br />
 
           <TextField
-          sx={{mb: 3}}
+          sx={{mb: 1}}
           required
           id="latitude"
           label="Latitude"
@@ -95,7 +97,7 @@ function Form() {
           <br />
 
           <TextField
-          sx={{mb: 3}}
+          sx={{mb: 1}}
           required
           id="longitude"
           label="Longitude"
@@ -159,11 +161,13 @@ function Form() {
             sx={{mb: 3}}
           >
             Upload Images
+
+            {/* ADD the 'hidden' attribute after */}
             <input
-              hidden accept="image/*" 
-              multiple type="file"
-              onChange={e => setImage(e.target.value)}
-              value={image}
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={e => setImage(e.target.files[0])}
             />
           </Button>
 
