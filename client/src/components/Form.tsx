@@ -54,7 +54,7 @@ function Form() {
             type="text"
             placeholder="My Birthday Spot!"
             variant="filled"
-            inputProps={{ style: {width: "40vw"}}}
+            inputProps={{minLength: 2, maxLength: 100, style: {width: "40vw"}}}
             onChange={e => setTitle(e.target.value)}
             value={title}
           />
@@ -73,7 +73,7 @@ function Form() {
             variant="filled"
             onChange={e => setDescription(e.target.value)}
             value={description}
-            inputProps={{ style: {width: "40vw"}}}
+            inputProps={{minLength: 3, maxLength: 2000, style: {width: "40vw"}}}
           />
 
           <br />
@@ -89,7 +89,7 @@ function Form() {
           helperText="Click here for help"
           onChange={e => setLatitude(e.target.value)}
           value={latitude}
-          inputProps={{ style: {width: "40vw"}}}
+          inputProps={{maxLength: 20, style: {width: "40vw"}}}
           />
 
           <br />
@@ -105,7 +105,7 @@ function Form() {
           helperText="Click here for help"
           onChange={e => setLongitude(e.target.value)}
           value={longitude}
-          inputProps={{ style: {width: "40vw"}}}
+          inputProps={{maxLength: 20, style: {width: "40vw"}}}
 
           />
 
@@ -148,8 +148,7 @@ function Form() {
             onChange={e => setTags(e.target.value)}
             value={tags}
             size="small"
-            inputProps={{ style: {width: "40vw"}}}
-
+            inputProps={{maxLength: 2000, style: {width: "40vw"}}}
           />
 
           <br />
