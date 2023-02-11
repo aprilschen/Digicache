@@ -10,8 +10,10 @@ class Cache(models.Model):
     title = models.CharField(max_length=100)
     latitude = models.DecimalField(max_digits=18, decimal_places=15)
     longitude = models.DecimalField(max_digits=18, decimal_places=15)
-    description = models.TextField(max_length=2000)
-    tags = models.CharField(max_length=2000)
+    description = models.TextField(max_length=2000, blank=True)
+    tags = models.CharField(max_length=2000, blank=True)
+
+    image = models.ImageField()
 
     def __str__(self):
         return str(self.title)

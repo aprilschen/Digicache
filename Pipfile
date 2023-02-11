@@ -9,6 +9,7 @@ psycopg2-binary = "*"
 mysqlclient = "*"
 djoser = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
