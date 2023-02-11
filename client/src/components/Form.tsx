@@ -47,25 +47,24 @@ function Form() {
         <h1>Leave your cache</h1>
         <form onSubmit={handleSubmit}>
           <TextField
+            sx={{mb: 3}}
             required
             id="title"
             label="Title"
             type="text"
             placeholder="My Birthday Spot!"
             variant="filled"
-            inputProps={{
-              style: {
-                width: "40vw",
-              },
-            }}
+            inputProps={{ style: {width: "40vw"}}}
             onChange={e => setTitle(e.target.value)}
             value={title}
           />
 
-          <hr />
+          <br />
 
           <TextField
+            sx={{mb: 3}}
             multiline
+            required
             rows={3}
             id="description"
             label="Description"
@@ -74,59 +73,73 @@ function Form() {
             variant="filled"
             onChange={e => setDescription(e.target.value)}
             value={description}
+            inputProps={{ style: {width: "40vw"}}}
           />
 
-          <hr />
+          <br />
 
           <TextField
+          sx={{mb: 3}}
+          required
+          id="latitude"
+          label="Latitude"
+          type="text"
+          placeholder="35.6931"
+          variant="filled"
+          helperText="Click here for help"
+          onChange={e => setLatitude(e.target.value)}
+          value={latitude}
+          inputProps={{ style: {width: "40vw"}}}
+          />
+
+          <br />
+
+          <TextField
+          sx={{mb: 3}}
+          required
+          id="longitude"
+          label="Longitude"
+          type="text"
+          placeholder="139.7065"
+          variant="filled"
+          helperText="Click here for help"
+          onChange={e => setLongitude(e.target.value)}
+          value={longitude}
+          inputProps={{ style: {width: "40vw"}}}
+
+          />
+
+          <br />
+
+          <TextField
+            sx={{mb: 3}}
             id="date"
             type="date"
             variant="filled"
             onChange={e => setDate(e.target.value)}
             value={date}
+            size="small"
+            inputProps={{ style: {width: "40vw"}}}
+
           />
 
-          <hr />
+          <br />
 
           <TextField
+            sx={{mb: 3}}
             id="time"
             type="time"
             variant="filled"
             onChange={e => setTime(e.target.value)}
             value={time}
+            inputProps={{ style: {width: "40vw"}}}
+
           />
 
-          <hr />
-
-            <TextField
-            required
-            id="latitude"
-            label="Latitude"
-            type="text"
-            placeholder="35.6931"
-            variant="filled"
-            helperText="Click here for help"
-            onChange={e => setLatitude(e.target.value)}
-            value={latitude}
-          />
-
-          <hr />
+          <br />
 
           <TextField
-            required
-            id="longitude"
-            label="Longitude"
-            type="text"
-            placeholder="139.7065"
-            variant="filled"
-            helperText="Click here for help"
-            onChange={e => setLongitude(e.target.value)}
-            value={longitude}
-          />
-
-          <hr />
-
-          <TextField
+            sx={{mb: 3}}
             id="tags"
             label="Tags"
             type="text"
@@ -134,13 +147,17 @@ function Form() {
             variant="filled"
             onChange={e => setTags(e.target.value)}
             value={tags}
+            size="small"
+            inputProps={{ style: {width: "40vw"}}}
+
           />
 
-          <hr />
+          <br />
 
           <Button
             variant="outlined"
             component="label"
+            sx={{mb: 3}}
           >
             Upload Images
             <input
@@ -151,10 +168,10 @@ function Form() {
             />
           </Button>
 
-          <hr />
+          <br />
 
-          <Button 
-          type="submit" 
+          <Button
+          type="submit"
           variant="contained">
             Submit
           </Button>
