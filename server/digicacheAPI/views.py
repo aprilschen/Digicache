@@ -16,7 +16,7 @@ def Caches(request):
         serialized_item = CacheSerializer(data = request.data)
         serialized_item.is_valid(raise_exception=True)
         serialized_item.save()
-        return Response({"data": request.data}, 201)
+        return Response({"message": "Cache created"}, 201)
 
 @api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 def SingleCache(request, pk):

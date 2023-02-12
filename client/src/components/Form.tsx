@@ -22,6 +22,8 @@ function Form() {
       formData.append('tags', tags);
       formData.append('image', image);
 
+      console.log(image);
+
       try {
         axios({
           method: "post",

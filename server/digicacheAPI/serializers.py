@@ -4,7 +4,8 @@ from .models import Cache
 class CacheSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cache
-        fields = ['id',
+        fields = "__all__"
+        '''fields = ['id',
                   'username',
                   'email',
                   'date',
@@ -14,5 +15,5 @@ class CacheSerializer(serializers.ModelSerializer):
                   'longitude',
                   'description',
                   'tags',
-                  # 'image',
-                ]
+                  'image',
+                ] '''

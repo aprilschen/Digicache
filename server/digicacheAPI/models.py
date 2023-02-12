@@ -11,7 +11,7 @@ class Cache(models.Model):
     date = models.DateField(blank=True)
     time = models.TimeField(blank=True)
     tags = models.CharField(max_length=2000, blank=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return str(self.title)
