@@ -31,7 +31,7 @@ function Form() {
           data: formData,
           headers: { "Content-Type": "multipart/form-data" },
         })
-        // window.location.reload(); ACTIVATE IN PRODUCTION
+        window.location.reload();
       } catch (e) {
         console.log(e);
       }
@@ -157,21 +157,13 @@ function Form() {
 
           <br />
 
-          <Button
-            variant="outlined"
-            component="label"
-            sx={{mb: 3}}
-          >
-            Upload Images
-
-            {/* ADD the 'hidden' attribute after */}
-            <input
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={e => setImage(e.target.files[0])}
-            />
-          </Button>
+          <input style={{marginBottom: '3vh', marginLeft: '5vh'}}
+            //hidden
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={e => setImage(e.target.files[0])}
+          />
 
           <br />
 

@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5175',
+    'http://localhost:5173',
 ]
 
 ROOT_URLCONF = 'server.urls'
