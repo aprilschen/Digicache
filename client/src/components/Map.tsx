@@ -1,7 +1,7 @@
 import { GoogleMap, useJsApiLoader} from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 import { InfoWindow } from '@react-google-maps/api';
-import ExamplePhoto from '../assets/example.png';
+import ExamplePhoto from '../../../server/media/images/example.png';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -14,10 +14,6 @@ const center = {
   lat: 35.69310784173771,
   lng: 139.70654253572886
 };
-
-const onLoad = marker => {
-  console.log('marker: ', marker)
-}
 
 const divStyle = {
   background: `white`,
@@ -69,6 +65,7 @@ function Map() {
             lat: parseFloat(cache.latitude),
             lng: parseFloat(cache.longitude)
           }}
+          key={cache.id}
           icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"}
           />
           )}
@@ -80,8 +77,10 @@ function Map() {
             lng: parseFloat(cache.longitude)
           }}
         >
-          <div style={divStyle}>
-            <img style={{height: '100px', width: '100px'}} src={ExamplePhoto}></img>
+          <div style={divStyle} key={cache.id}>
+            <img style={{height: '100px', width: '100px'}} 
+            src='https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'>
+              </img>   {/* perhaps I should append a string to the cache.image file and then test it out. Maybe I can't concatenate mid-String */}
             <hr />
             <h3>{cache.title}</h3>
             <p>{cache.description}</p>
