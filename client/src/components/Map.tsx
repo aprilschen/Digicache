@@ -2,7 +2,9 @@ import { maxHeight } from '@mui/system';
 import { GoogleMap, useJsApiLoader} from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 import { InfoWindow } from '@react-google-maps/api';
-import ExamplePhoto from '../assets/example.png'
+import ExamplePhoto from '../assets/example.png';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const containerStyle = {
   width: '100%',
@@ -34,36 +36,37 @@ function Map() {
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyACJwjUE7Z5Xju4G7LYuU865-M22090SjE"
     })
+    const URL = "http://127.0.0.1:8000/api/caches";
+    const [data, setData] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
-    return isLoaded ? (
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={13}
-        >
+    useEffect(() => {
+    (async () => {
+        try {
+          const response = await axios.get(URL)
+            .then((res) => {
+              setData(res.data.data)
+            })
+        } catch(error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+        }
+      })();
+    }, []);
 
-        <Marker
-        onLoad={onLoad}
-        position={position}
-        icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"}
-        />
+    if (isLoading==true) {
+      return (
+        <div>Loading...</div>
+      );
+    }
 
-          <InfoWindow
-          position={{
-            lat: 35.69750784173771,
-            lng: 139.70654253572886
-          }}
-        >
-          <div style={divStyle}>
-            <img style={{height: '100px', width: '100px'}} src={ExamplePhoto}></img>
-            <hr />
-            <h3>Cool Alleyway!</h3>
-            <p>Found this cool alleway in the middle of Shinjuku.</p>
-          </div>
-        </InfoWindow>
-
-        </GoogleMap>
-    ) : <></>
+    return (
+      <>
+        <p>This is the map function</p>
+        {data.map(cache => <p>{cache.title}</p>)}
+      </>
+    );
   }
 
   export default Map
