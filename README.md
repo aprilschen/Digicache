@@ -19,7 +19,9 @@ Share and see the geotagged photos and videos of the hidden parts of the world.
   - PostgreSQL
 
 ### Install and Run:
-Run 'npm start' on the client folder
+Run the following commands in the client folder: 
+ - npm install
+ - npm start
 
 Run the following commands in the server folder:
  - python3 manage.py makemigrations
