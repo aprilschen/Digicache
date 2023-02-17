@@ -88,20 +88,13 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-
     'default': {
-
-      'ENGINE': 'django.db.backends.mysql',
-
+      'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'digicache',
-
-        'USER': 'root',
-
+        'USER': 'admin',
         'PASSWORD': 'TheNexusGaming1!',
-
         'HOST': '127.0.0.1',
-
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
