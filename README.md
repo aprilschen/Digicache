@@ -1,4 +1,4 @@
-# Digicache-2.0
+# Digicache 2.0
 Share and see the geotagged photos and videos of the hidden parts of the world.
 
 ![Screenshot](assets/demo1.png)
