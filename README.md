@@ -28,4 +28,6 @@ Run the following commands in the server folder:
  - python3 manage.py migrate
  - python3 manage.py runserver
 
+You can find Digicache 1.0 (The previous version) at [this link:](https://github.com/aprilschen/Digicache-1) 
+
 Happy exploring!
