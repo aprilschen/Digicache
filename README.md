@@ -1,4 +1,4 @@
-# Digicache-2.0
+# Digicache 2.0
 Share and see the geotagged photos and videos of the hidden parts of the world.
 
 ![Screenshot](assets/demo1.png)
@@ -27,5 +27,7 @@ Run the following commands in the server folder:
  - python3 manage.py makemigrations
  - python3 manage.py migrate
  - python3 manage.py runserver
+
+You can find Digicache 1.0 (The previous version) at [this link:](https://github.com/aprilschen/Digicache-1) 
 
 Happy exploring!
