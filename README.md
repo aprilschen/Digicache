@@ -1,8 +1,8 @@
 # Digicache 2.0
 Share and see the geotagged photos and videos of the hidden parts of the world.
 
-![Screenshot](assets/demo1.png)
-![Screenshot](assets/demo2.png)
+![Screenshot](demoAssets/demo1.png)
+![Screenshot](demoAssets/demo2.png)
 
 ### Tech Stack:
 ###### Client-side:
@@ -14,9 +14,9 @@ Share and see the geotagged photos and videos of the hidden parts of the world.
  - Axios
 
  ###### Server-side:
-  - Django Rest Framework
-  - Djoser, Axios
-  - PostgreSQL
+  - Node.js, Express.js, GraphQL
+  - Apollo-Server
+  - MongoDB
 
 ### Install and Run:
 Run the following commands in the client folder: 
