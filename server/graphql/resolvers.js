@@ -1,26 +1,30 @@
-const Recipe = require('../models/Recipe');
+const Cache = require('../models/Cache');
 
 module.exports = {
     Query: {
-        async recipe(_, { ID }) {
-            return await Recipe.findById(ID)
+        async cache(_, { ID }) {
+            return await Cache.findById(ID)
         },
 
-        async getRecipes(_, {amount}) {
-            return await Recipe.find().sort({createdAt: -1}).limit(amount)
+        async getCaches(_, {amount}) {
+            return await Cache.find().sort({createdAt: -1}).limit(amount)
         }
     },
     Mutation: {
-        async createRecipe(_, {recipeInput: {name, description}}) {
-            const createdRecipe = new Recipe({
-                name: name,
+        async createCache(_, {cacheInput: {title, description, latitude, longitude, tags, image}}) {
+            const createdCache = new Cache({
+                title: title,
                 description: description,
+                latitude: latitude,
+                longitude: longitude,
                 createdAt: new Date().toISOString(),
+                tags: tags,
+                image: image,
                 thumbsUp: 0,
                 thumbsDown: 0
             });
 
-            const res = await createdRecipe.save();  // MongoDB Saving
+            const res = await createdCache.save();  // MongoDB Saving
 
             return {
                 id: res.id,
@@ -28,12 +32,19 @@ module.exports = {
             }
         },
 
-        async deleteRecipe(_, {ID}) {
-            const wasDeleted = (await Recipe.deleteOne({_id: ID})).deletedCount
+        async deleteCache(_, {ID}) {
+            const wasDeleted = (await Cache.deleteOne({_id: ID})).deletedCount
             return wasDeleted;
         },
-        async editRecipe(_, {ID, recipeInput:{name, description}}) {
-            const wasEdited = (await Recipe.updateOne({_id: ID}, { name: name, description: description})).modifiedCount;
+        async editCache(_, {ID, cacheInput:{title, description, latitude, longitude, tags, image}}) {
+            const wasEdited = (await Cache.updateOne({_id: ID}, {
+                title: title,
+                description: description,
+                latitude: latitude,
+                longitude: longitude,
+                tags: tags,
+                image: image
+                })).modifiedCount;
             return wasEdited;
         }
     }

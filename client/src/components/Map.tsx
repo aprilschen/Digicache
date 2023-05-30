@@ -1,8 +1,6 @@
 import { GoogleMap, useJsApiLoader} from '@react-google-maps/api';
 import { Marker } from '@react-google-maps/api';
 import { InfoWindow } from '@react-google-maps/api';
-import Alley from '../../../server/media/images/example.png';
-import Lake from '../../../server/media/images/XYZeXYZe6736_375.jpeg'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
