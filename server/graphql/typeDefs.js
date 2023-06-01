@@ -47,7 +47,7 @@ type Query {
 }
 
 type Mutation {
-    createCache(cacheInput: CacheInput): Cache!
+    createCache(cacheInput: CacheInput): Boolean!
     deleteCache(ID: ID!): Boolean
     editCache(ID: ID!, cacheInput: CacheInput): Boolean
 }

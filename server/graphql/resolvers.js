@@ -25,11 +25,7 @@ module.exports = {
             });
 
             const res = await createdCache.save();  // MongoDB Saving
-
-            return {
-                id: res.id,
-                ...res._doc
-            }
+            return true;
         },
 
         async deleteCache(_, {ID}) {
