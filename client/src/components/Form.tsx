@@ -1,8 +1,6 @@
 import { TextField } from "@mui/material"
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import qs from 'qs';
-import axios from "axios";
 
 import { gql, useMutation } from "@apollo/client";
 
