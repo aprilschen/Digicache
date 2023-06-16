@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:80/',
+  uri: 'http://digicache-docker-server.us-west-1.elasticbeanstalk.com/',
   cache: new InMemoryCache(),
 });
 
