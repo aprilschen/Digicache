@@ -18,15 +18,11 @@ Share and see the geotagged photos and videos of the hidden parts of the world.
   - Apollo-Server
   - MongoDB
 
-### Install and Run:
-Run the following commands in the client folder: 
- - npm install
- - npm start
+ ###### Dev-ops:
+  - Docker, Docker Hub (Container Registry)
+  - Kubernetes, Amazon EKS
+  - Jenkins (CI/CD)
 
-Run the following commands in the server folder:
- - python3 manage.py makemigrations
- - python3 manage.py migrate
- - python3 manage.py runserver
 
 You can find Digicache 1.0 (The previous version) at [this link:](https://github.com/aprilschen/Digicache-1) 
 
