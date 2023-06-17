@@ -20,7 +20,7 @@ Share and see the geotagged photos and videos of the hidden parts of the world.
 
  ###### Dev-ops:
   - Docker, Docker Hub (Container Registry)
-  - Kubernetes, Amazon EKS
+  - Kubernetes, Amazon Elastic Beanstalk
   - Jenkins (CI/CD)
 
 
